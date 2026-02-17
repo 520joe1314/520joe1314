@@ -1,0 +1,257 @@
+[
+  {
+    "id": "question_forms",
+    "name": "Question Forms",
+    "quickRule": "intonation / est-ce que / inversion",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "passe_compose",
+    "name": "Passé Composé",
+    "quickRule": "avoir vs être, agreement, reflexive",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "imparfait_vs_pc",
+    "name": "Imparfait vs Passé Composé",
+    "quickRule": "background vs completed action",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "futur_conditional",
+    "name": "Futur / Conditionnel",
+    "quickRule": "futur proche, futur simple, voudrais/pourrais",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "passe_recent",
+    "name": "Passé Récent",
+    "quickRule": "venir de + infinitif",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "pronouns",
+    "name": "Pronouns",
+    "quickRule": "COD/COI/y/en and order",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "negation",
+    "name": "Negation",
+    "quickRule": "ne…pas/jamais/plus/rien/personne/que",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "prepositions_time",
+    "name": "Prepositions + Time",
+    "quickRule": "à/de/en/chez + depuis/pendant/il y a",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "articles",
+    "name": "Articles + Partitives",
+    "quickRule": "du/de la/des/de after negation",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "imperative",
+    "name": "Imperative + Pronouns",
+    "quickRule": "Lève-toi / Donne-le-moi",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "subjunctive",
+    "name": "Subjunctive Survival",
+    "quickRule": "il faut que / pour que / bien que",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "cest_ilest_demo",
+    "name": "c’est vs il est + demonstratives",
+    "quickRule": "ce/cet/cette/ces/celui",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "comparisons",
+    "name": "Comparisons",
+    "quickRule": "plus/moins/aussi, meilleur/mieux",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "relative_pronouns",
+    "name": "Relative Pronouns",
+    "quickRule": "qui/que/où/dont",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  },
+  {
+    "id": "accent_traps",
+    "name": "Accent Traps",
+    "quickRule": "où/ou, là/la/l’a, a/à",
+    "triggers": [
+      "depuis",
+      "il faut que",
+      "ne…jamais",
+      "est-ce que",
+      "y/en",
+      "où/ou"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "difficulty": "mixed"
+  }
+]
