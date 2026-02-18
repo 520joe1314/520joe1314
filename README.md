@@ -1,3 +1,4 @@
+<<<<<<< codex/build-a-browser-based-study-game-for-french-3
 # Grand Concours Level 3 Arena (D’accord! 3 Leçons 1–8)
 
 A complete browser-based study game for **AATF Le Grand Concours Level 3** focused on:
@@ -128,3 +129,32 @@ Listening uses browser TTS when available.
 - The game prioritizes speed + accuracy and logs trigger-based mistakes.
 - Spaced repetition is implemented using an adaptive Leitner-like schedule based on:
   correctness, response speed, streak, and trap category.
+=======
+# Grand Concours L3 Offline (Single File)
+
+This project now provides a **single self-contained file**:
+
+- `index.html`
+
+It contains all HTML, CSS, JavaScript, grammar data, vocabulary chunks, and question bank.
+
+## Run
+
+Just double-click `index.html` in any modern browser.
+No npm, no server, no build tools, no backend.
+
+## Included features
+
+- Quick Start mode
+- Grammar mode
+- Vocabulary mode
+- Mixed practice mode
+- Timed multiple-choice questions
+- Pronoun drills
+- Tense drills (passé composé, imparfait, futur proche, futur simple)
+- Subjunctive recognition
+- Article drills (du, de la, des, de after negation)
+- Question word drills
+- Accent confusion drills (où/ou, là/la/l’a, a/à)
+- Local score tracking with localStorage
+>>>>>>> main

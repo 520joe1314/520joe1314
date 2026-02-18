@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+<<<<<<< codex/build-a-browser-based-study-game-for-french-3
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,4 +11,262 @@
     <div id="app"></div>
     <script type="module" src="src/app.js"></script>
   </body>
+=======
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grand Concours L3 — Offline Study Game</title>
+  <style>
+    :root{
+      --bg:#0b1020; --panel:#121a31; --panel2:#182241; --text:#f3f6ff; --muted:#aab5d6; --ok:#34d399; --bad:#fb7185; --accent:#60a5fa;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#070b17,#0f1630);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:14px}
+    h1,h2,h3,p{margin:.2rem 0}
+    .sub{color:var(--muted);font-size:.95rem}
+    .card{background:var(--panel);border:1px solid #2a3a69;border-radius:14px;padding:12px;margin:10px 0}
+    .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+    button{background:var(--panel2);color:var(--text);border:1px solid #35508e;padding:10px;border-radius:10px;font-weight:600}
+    button:hover{border-color:var(--accent);cursor:pointer}
+    .tiny{font-size:.85rem;color:var(--muted)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .stats .card{margin:0;text-align:center}
+    .opt{width:100%;text-align:left;margin:6px 0}
+    .ok{color:var(--ok)} .bad{color:var(--bad)}
+    .row{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+    input,select{padding:8px;border-radius:8px;border:1px solid #35508e;background:#0d1730;color:var(--text)}
+    .pill{display:inline-block;background:#1f2f5a;border:1px solid #4160a9;padding:2px 8px;border-radius:999px;font-size:.8rem;margin-right:4px}
+    .hidden{display:none}
+    @media (max-width:680px){.stats{grid-template-columns:repeat(2,1fr)} .wrap{padding:10px}}
+  </style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+(() => {
+  const STORAGE_KEY = 'gc_l3_single_file_v2';
+  const TOPICS = {
+    pronouns: 'Pronouns', tense: 'Tenses', subjunctive: 'Subjunctive', articles: 'Articles', qwords: 'Question words', accents: 'Accent traps', mixed: 'Mixed'
+  };
+
+  const GRAMMAR_DB = [
+    {id:'pronouns', rule:'Order: me/te/se/nous/vous → le/la/les → lui/leur → y → en.'},
+    {id:'tense', rule:'PC = finished event; imparfait = background/habit; futur proche = aller + infinitif; futur simple = one-word future.'},
+    {id:'subjunctive', rule:'After il faut que / je veux que / pour que / bien que use subjunctive forms (sois, aie, fasse, puisse).'},
+    {id:'articles', rule:'Partitive: du/de la/de l’/des. After negation, usually de (pas de).'},
+    {id:'qwords', rule:'où = where, ou = or; qui = who, que/qu’est-ce que = what; quand = when; pourquoi = why; comment = how.'},
+    {id:'accents', rule:'où/ou, là/la/l’a, a/à change meaning: accent matters.'}
+  ];
+
+  const VOCAB_DB = [
+    {chunk:'J’en ai marre de ce bruit.',topic:'pronouns',meaning:'I am fed up with this noise.'},
+    {chunk:'Je lui parle souvent.',topic:'pronouns',meaning:'I talk to him/her often.'},
+    {chunk:'Nous y allons en bus.',topic:'pronouns',meaning:'We go there by bus.'},
+    {chunk:'Il vient de finir son devoir.',topic:'tense',meaning:'He has just finished his homework.'},
+    {chunk:'Quand j’étais petit, je jouais ici.',topic:'tense',meaning:'When I was little, I used to play here.'},
+    {chunk:'Demain, je prendrai le train.',topic:'tense',meaning:'Tomorrow, I will take the train.'},
+    {chunk:'Il faut que tu sois prudent.',topic:'subjunctive',meaning:'You must be careful.'},
+    {chunk:'Je voudrais que vous fassiez attention.',topic:'subjunctive',meaning:'I would like you to pay attention.'},
+    {chunk:'Je mange du pain.',topic:'articles',meaning:'I eat some bread.'},
+    {chunk:'Je ne bois pas de soda.',topic:'articles',meaning:'I do not drink any soda.'},
+    {chunk:'Où habites-tu ?',topic:'qwords',meaning:'Where do you live?'},
+    {chunk:'Et là, ce n’est pas pareil.',topic:'accents',meaning:'And there/at that point, it is not the same.'}
+  ];
+
+  const QUESTIONS = [
+    // Pronouns
+    q('pronouns','Replace: Je parle à mes parents.','Je leur parle.',['Je leur parle.','Je les parle.','Je y parle.','Je en parle'],0,'COI plural → leur.'),
+    q('pronouns','Replace: Tu vas au parc ?','Tu y vas ?',['Tu en vas ?','Tu y vas ?','Tu les vas ?','Tu lui vas ?'],1,'à + place → y.'),
+    q('pronouns','Choose correct order: Donne / le / moi','Donne-le-moi.',['Donne-moi-le.','Donne-le-moi.','Donne-moi-lui.','Donne-y-moi.'],1,'Imperative affirmative uses hyphen order.'),
+    q('pronouns','Negation + pronoun: Je le vois.','Je ne le vois pas.',['Je le ne vois pas.','Je ne vois pas le.','Je ne le vois pas.','Je ne vois le pas.'],2,'ne + pronoun + verb + pas.'),
+    // Tenses
+    q('tense','Depuis 2 ans, nous ___ ici.','habitons',['habitons','avons habité','habiterons','habitions'],0,'depuis + present when still true.'),
+    q('tense','Hier, elle ___ au cinéma.','est allée',['allait','est allée','va aller','ira'],1,'Completed event yesterday → passé composé.'),
+    q('tense','Quand j’étais jeune, je ___ au foot tous les jours.','jouais',['jouais','ai joué','jouerai','vais jouer'],0,'Habit in the past → imparfait.'),
+    q('tense','Demain matin, il ___ ses valises.','fera',['a fait','faisait','va faire','fera'],3,'Future simple clue: demain.'),
+    q('tense','Nous ___ partir ce soir (near future).','allons',['allons','partons','partirons','sommes allés'],0,'futur proche = aller + infinitive.'),
+    // Subjunctive
+    q('subjunctive','Il faut que tu ___ prêt.','sois',['es','sois','seras','étais'],1,'Trigger il faut que → subjunctive.'),
+    q('subjunctive','Je veux qu’il ___ ses devoirs.','fasse',['fait','fera','fasse','faisait'],2,'je veux que triggers subjunctive.'),
+    q('subjunctive','Bien que ce ___ difficile, on continue.','soit',['est','sera','soit','était'],2,'bien que + subjunctive.'),
+    // Articles
+    q('articles','Je prends ___ eau.','de l’',['du','de la','de l’','des'],2,'eau starts with vowel.'),
+    q('articles','Nous avons ___ amis au lycée.','des',['du','de la','des','de'],2,'plural count noun.'),
+    q('articles','Je ne mange pas ___ viande.','de',['de la','du','des','de'],3,'After negation → de.'),
+    q('articles','Il boit ___ lait le matin.','du',['du','de','des','le'],0,'partitive masculine singular.'),
+    // Question words
+    q('qwords','___ habite avec toi ? (who)','Qui',['Qui','Que','Où','Quand'],0,'Subject who = qui.'),
+    q('qwords','___ est-ce que tu fais ? (what)','Qu’est-ce que',['Qu’est-ce que','Qui','Combien','Lequel'],0,'Object what = qu’est-ce que.'),
+    q('qwords','Tu choisis ___ livre ? (which)','quel',['qui','quel','où','quoi'],1,'which + noun = quel.'),
+    q('qwords','___ de temps restes-tu ? (how much)','Combien',['Pourquoi','Combien','Comment','Quand'],1,'combien de + noun/time.'),
+    // Accents
+    q('accents','Choose: Tu vas ___ ? (where)','où',['où','ou','a','à'],0,'où = where.'),
+    q('accents','Choose: café ___ thé (or)','ou',['où','ou','à','a'],1,'ou = or.'),
+    q('accents','Choose: Et ___, tout a changé.','là',['la','là','l’a','a'],1,'là = there/at that point.'),
+    q('accents','Choose: Elle ___ vu hier. (has it)','l’a',['la','là','l’a','à'],2,'l’a = has it.'),
+    q('accents','Choose: Il ___ 15 ans.','a',['a','à','là','la'],0,'a = has.'),
+    q('accents','Choose: Je vais ___ Paris.','à',['a','à','où','ou'],1,'à = to/in.'),
+    // Mixed extras
+    q('mixed','Question form: ___ tu comprends la phrase ?','Est-ce que',['Est-ce que','Est que','Es-ce que','Est-ce qui'],0,'Standard neutral question opener.'),
+    q('mixed','Negation: Je vois ___ personne.','personne',['pas','plus','rien','personne'],3,'ne...personne = nobody.'),
+    q('mixed','Choose best: Je n’ai plus ___ temps.','de',['du','de','des','le'],1,'after negation use de.'),
+    q('mixed','Past agreement with être: Elles sont ___ tôt.','arrivées',['arrivé','arrivées','arriver','arrive'],1,'feminine plural agreement with être.'),
+  ];
+
+  function q(topic, prompt, answer, options, idx, explain){
+    return { id: cryptoLike(), topic, prompt, answer, options, correctIndex: idx, explain };
+  }
+  function cryptoLike(){ return 'q' + Math.random().toString(36).slice(2,10); }
+
+  let state = load();
+  let session = null;
+
+  function load(){
+    try { return Object.assign({totalAnswered:0,totalCorrect:0,bestStreak:0,history:[]}, JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')); }
+    catch { return {totalAnswered:0,totalCorrect:0,bestStreak:0,history:[]}; }
+  }
+  function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+  function home(){
+    const acc = state.totalAnswered ? Math.round(100*state.totalCorrect/state.totalAnswered) : 0;
+    app.innerHTML = `
+      <h1>🎮 Grand Concours L3 (Offline Single File)</h1>
+      <p class="sub">Double-click this file and train French 3 skills: grammar + vocab in context.</p>
+      <div class="stats">
+        <div class="card"><h3>${state.totalAnswered}</h3><p class="tiny">Answered</p></div>
+        <div class="card"><h3>${acc}%</h3><p class="tiny">Accuracy</p></div>
+        <div class="card"><h3>${state.bestStreak}</h3><p class="tiny">Best streak</p></div>
+        <div class="card"><h3>${state.history.length}</h3><p class="tiny">Sessions</p></div>
+      </div>
+      <div class="card">
+        <h3>Modes</h3>
+        <div class="grid">
+          <button data-mode="quick">Quick Start</button>
+          <button data-mode="grammar">Grammar</button>
+          <button data-mode="vocab">Vocabulary</button>
+          <button data-mode="mixed">Mixed Practice</button>
+          <button data-mode="scores">Score Log</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Mini Grammar Bank</h3>
+        ${GRAMMAR_DB.map(g=>`<p><span class="pill">${TOPICS[g.id]||g.id}</span>${g.rule}</p>`).join('')}
+      </div>`;
+    app.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>startMode(b.dataset.mode));
+  }
+
+  function startMode(mode){
+    if(mode==='scores') return showScores();
+    if(mode==='vocab') return vocabMode();
+
+    const pool = pickPool(mode);
+    session = {mode, index:0, score:0, streak:0, correct:0, answered:0, started:Date.now(), timePerQ: mode==='quick'?20:25, questions:shuffle(pool).slice(0, mode==='quick'?12:15)};
+    renderQuestion();
+  }
+
+  function pickPool(mode){
+    if(mode==='mixed' || mode==='quick') return QUESTIONS;
+    if(mode==='grammar') return QUESTIONS.filter(x=>x.topic!=='mixed');
+    return QUESTIONS;
+  }
+
+  function renderQuestion(){
+    const q = session.questions[session.index];
+    if(!q) return finish();
+    let left = session.timePerQ;
+    app.innerHTML = `
+      <div class="row"><button id="homeBtn">← Home</button><h2>${title(session.mode)} • ${session.index+1}/${session.questions.length}</h2><div id="timer" class="pill">⏱ ${left}s</div></div>
+      <div class="card">
+        <p><span class="pill">${TOPICS[q.topic]||q.topic}</span></p>
+        <h3>${q.prompt}</h3>
+        ${q.options.map((o,i)=>`<button class="opt" data-i="${i}">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}
+        <p id="fb" class="tiny"></p>
+      </div>`;
+    app.querySelector('#homeBtn').onclick = home;
+    app.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>answer(Number(b.dataset.i)));
+
+    const timerEl = app.querySelector('#timer');
+    const tick = setInterval(()=>{
+      left--; timerEl.textContent = `⏱ ${left}s`;
+      if(left<=0){ clearInterval(tick); answer(-1,true); }
+    },1000);
+    session._timer = tick;
+  }
+
+  function answer(selected, timeout=false){
+    clearInterval(session._timer);
+    const q = session.questions[session.index];
+    const ok = selected===q.correctIndex;
+    session.answered++; state.totalAnswered++;
+    if(ok){ session.correct++; state.totalCorrect++; session.streak++; session.score += 100 + session.streak*8; }
+    else { session.streak = 0; session.score = Math.max(0, session.score-15); }
+    state.bestStreak = Math.max(state.bestStreak, session.streak);
+    save();
+
+    const fb = app.querySelector('#fb');
+    if(fb){
+      fb.className = ok ? 'ok' : 'bad';
+      fb.textContent = ok ? '✅ Correct' : (timeout ? `⏰ Time. Correct: ${q.answer}. ${q.explain}` : `❌ Correct: ${q.answer}. ${q.explain}`);
+    }
+    setTimeout(()=>{ session.index++; renderQuestion(); }, 650);
+  }
+
+  function finish(){
+    const pct = Math.round(100*session.correct/Math.max(1,session.answered));
+    state.history.push({date:new Date().toLocaleString(),mode:session.mode,score:session.score,correct:session.correct,total:session.answered,accuracy:pct});
+    if(state.history.length>30) state.history = state.history.slice(-30);
+    save();
+    app.innerHTML = `
+      <div class="row"><button id="homeBtn">← Home</button><h2>Session complete</h2></div>
+      <div class="card">
+        <h3>Score: ${session.score}</h3>
+        <p>Accuracy: <strong>${pct}%</strong> (${session.correct}/${session.answered})</p>
+        <p class="tiny">Speed mode and streak bonus included.</p>
+      </div>
+      <div class="card"><button id="again">Play again</button></div>`;
+    app.querySelector('#homeBtn').onclick = home;
+    app.querySelector('#again').onclick = ()=>startMode(session.mode);
+  }
+
+  function vocabMode(){
+    const items = shuffle([...VOCAB_DB]).slice(0,10);
+    app.innerHTML = `
+      <div class="row"><button id="homeBtn">← Home</button><h2>Vocabulary Mode (Chunks in context)</h2></div>
+      <div class="card">
+        <p class="tiny">Read the French chunk, say meaning, then reveal.</p>
+        ${items.map((v,i)=>`<details><summary>${i+1}. <span class="pill">${TOPICS[v.topic]}</span> ${v.chunk}</summary><p>${v.meaning}</p></details>`).join('')}
+      </div>
+      <div class="card"><button id="mcqVocab">Start MCQ Vocab Drill</button></div>`;
+    app.querySelector('#homeBtn').onclick = home;
+    app.querySelector('#mcqVocab').onclick = () => {
+      const vocabQs = items.map(v => {
+        const wrong = shuffle(VOCAB_DB.filter(x=>x!==v)).slice(0,3).map(x=>x.meaning);
+        const opts = shuffle([v.meaning,...wrong]);
+        return {id:cryptoLike(),topic:v.topic,prompt:`Meaning in context: ${v.chunk}`,answer:v.meaning,options:opts,correctIndex:opts.indexOf(v.meaning),explain:'Use chunk meaning, not isolated word.'};
+      });
+      session = {mode:'vocab', index:0, score:0, streak:0, correct:0, answered:0, started:Date.now(), timePerQ:22, questions:vocabQs};
+      renderQuestion();
+    };
+  }
+
+  function showScores(){
+    const rows = state.history.slice().reverse();
+    app.innerHTML = `
+      <div class="row"><button id="homeBtn">← Home</button><h2>Score Tracking</h2><button id="resetBtn">Reset stats</button></div>
+      <div class="card">${rows.length?rows.map(r=>`<p><span class="pill">${r.mode}</span> ${r.date} — score ${r.score}, ${r.correct}/${r.total} (${r.accuracy}%)</p>`).join(''):'<p>No sessions yet.</p>'}</div>`;
+    app.querySelector('#homeBtn').onclick=home;
+    app.querySelector('#resetBtn').onclick=()=>{ if(confirm('Reset all local scores?')){ localStorage.removeItem(STORAGE_KEY); state=load(); home(); }};
+  }
+
+  function title(mode){
+    return {quick:'Quick Start',grammar:'Grammar Mode',mixed:'Mixed Practice',vocab:'Vocabulary Mode'}[mode]||mode;
+  }
+  function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+
+  home();
+})();
+</script>
+</body>
+>>>>>>> main
 </html>
