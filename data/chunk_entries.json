@@ -1,0 +1,3302 @@
+[
+  {
+    "id": "c1",
+    "text": "Il faut que je exemple 1.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 1",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c2",
+    "text": "Je viens de exemple 2.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 2",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c3",
+    "text": "Je suis en train de exemple 3.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 3",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c4",
+    "text": "J’en ai marre de exemple 4.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 4",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c5",
+    "text": "Ça dépend de exemple 5.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 5",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c6",
+    "text": "Je me rends compte que exemple 6.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 6",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c7",
+    "text": "Est-ce que tu exemple 7.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 7",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c8",
+    "text": "Où est-ce que exemple 8.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 8",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c9",
+    "text": "Je n’ai plus de exemple 9.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 9",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c10",
+    "text": "Nous avons besoin de exemple 10.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 10",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c11",
+    "text": "Tu pourrais exemple 11.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 11",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c12",
+    "text": "Je voudrais exemple 12.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 12",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c13",
+    "text": "Il y a exemple 13.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 13",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c14",
+    "text": "Depuis deux ans exemple 14.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 14",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c15",
+    "text": "Pendant les vacances exemple 15.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 15",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c16",
+    "text": "Donne-le-moi exemple 16.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 16",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c17",
+    "text": "Ne me le donne pas exemple 17.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 17",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c18",
+    "text": "Je lui en parle exemple 18.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 18",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c19",
+    "text": "Tu y vas exemple 19.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 19",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c20",
+    "text": "On en revient exemple 20.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 20",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c21",
+    "text": "Il faut que je exemple 21.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 21",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c22",
+    "text": "Je viens de exemple 22.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 22",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c23",
+    "text": "Je suis en train de exemple 23.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 23",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c24",
+    "text": "J’en ai marre de exemple 24.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 24",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c25",
+    "text": "Ça dépend de exemple 25.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 25",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c26",
+    "text": "Je me rends compte que exemple 26.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 26",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c27",
+    "text": "Est-ce que tu exemple 27.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 27",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c28",
+    "text": "Où est-ce que exemple 28.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 28",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c29",
+    "text": "Je n’ai plus de exemple 29.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 29",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c30",
+    "text": "Nous avons besoin de exemple 30.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 30",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c31",
+    "text": "Tu pourrais exemple 31.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 31",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c32",
+    "text": "Je voudrais exemple 32.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 32",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c33",
+    "text": "Il y a exemple 33.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 33",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c34",
+    "text": "Depuis deux ans exemple 34.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 34",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c35",
+    "text": "Pendant les vacances exemple 35.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 35",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c36",
+    "text": "Donne-le-moi exemple 36.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 36",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c37",
+    "text": "Ne me le donne pas exemple 37.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 37",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c38",
+    "text": "Je lui en parle exemple 38.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 38",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c39",
+    "text": "Tu y vas exemple 39.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 39",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c40",
+    "text": "On en revient exemple 40.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 40",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c41",
+    "text": "Il faut que je exemple 41.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 41",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c42",
+    "text": "Je viens de exemple 42.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 42",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c43",
+    "text": "Je suis en train de exemple 43.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 43",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c44",
+    "text": "J’en ai marre de exemple 44.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 44",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c45",
+    "text": "Ça dépend de exemple 45.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 45",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c46",
+    "text": "Je me rends compte que exemple 46.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 46",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c47",
+    "text": "Est-ce que tu exemple 47.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 47",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c48",
+    "text": "Où est-ce que exemple 48.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 48",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c49",
+    "text": "Je n’ai plus de exemple 49.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 49",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c50",
+    "text": "Nous avons besoin de exemple 50.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 50",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c51",
+    "text": "Tu pourrais exemple 51.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 51",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c52",
+    "text": "Je voudrais exemple 52.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 52",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c53",
+    "text": "Il y a exemple 53.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 53",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c54",
+    "text": "Depuis deux ans exemple 54.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 54",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c55",
+    "text": "Pendant les vacances exemple 55.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 55",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c56",
+    "text": "Donne-le-moi exemple 56.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 56",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c57",
+    "text": "Ne me le donne pas exemple 57.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 57",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c58",
+    "text": "Je lui en parle exemple 58.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 58",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c59",
+    "text": "Tu y vas exemple 59.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 59",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c60",
+    "text": "On en revient exemple 60.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 60",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c61",
+    "text": "Il faut que je exemple 61.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 61",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c62",
+    "text": "Je viens de exemple 62.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 62",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c63",
+    "text": "Je suis en train de exemple 63.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 63",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c64",
+    "text": "J’en ai marre de exemple 64.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 64",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c65",
+    "text": "Ça dépend de exemple 65.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 65",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c66",
+    "text": "Je me rends compte que exemple 66.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 66",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c67",
+    "text": "Est-ce que tu exemple 67.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 67",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c68",
+    "text": "Où est-ce que exemple 68.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 68",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c69",
+    "text": "Je n’ai plus de exemple 69.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 69",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c70",
+    "text": "Nous avons besoin de exemple 70.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 70",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c71",
+    "text": "Tu pourrais exemple 71.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 71",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c72",
+    "text": "Je voudrais exemple 72.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 72",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c73",
+    "text": "Il y a exemple 73.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 73",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c74",
+    "text": "Depuis deux ans exemple 74.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 74",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c75",
+    "text": "Pendant les vacances exemple 75.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 75",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c76",
+    "text": "Donne-le-moi exemple 76.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 76",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c77",
+    "text": "Ne me le donne pas exemple 77.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 77",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c78",
+    "text": "Je lui en parle exemple 78.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 78",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c79",
+    "text": "Tu y vas exemple 79.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 79",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c80",
+    "text": "On en revient exemple 80.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 80",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c81",
+    "text": "Il faut que je exemple 81.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 81",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c82",
+    "text": "Je viens de exemple 82.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 82",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c83",
+    "text": "Je suis en train de exemple 83.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 83",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c84",
+    "text": "J’en ai marre de exemple 84.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 84",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c85",
+    "text": "Ça dépend de exemple 85.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 85",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c86",
+    "text": "Je me rends compte que exemple 86.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 86",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c87",
+    "text": "Est-ce que tu exemple 87.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 87",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c88",
+    "text": "Où est-ce que exemple 88.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 88",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c89",
+    "text": "Je n’ai plus de exemple 89.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 89",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c90",
+    "text": "Nous avons besoin de exemple 90.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 90",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c91",
+    "text": "Tu pourrais exemple 91.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 91",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c92",
+    "text": "Je voudrais exemple 92.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 92",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c93",
+    "text": "Il y a exemple 93.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 93",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c94",
+    "text": "Depuis deux ans exemple 94.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 94",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c95",
+    "text": "Pendant les vacances exemple 95.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 95",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c96",
+    "text": "Donne-le-moi exemple 96.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 96",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c97",
+    "text": "Ne me le donne pas exemple 97.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 97",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c98",
+    "text": "Je lui en parle exemple 98.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 98",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c99",
+    "text": "Tu y vas exemple 99.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 99",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c100",
+    "text": "On en revient exemple 100.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 100",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c101",
+    "text": "Il faut que je exemple 101.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 101",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c102",
+    "text": "Je viens de exemple 102.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 102",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c103",
+    "text": "Je suis en train de exemple 103.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 103",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c104",
+    "text": "J’en ai marre de exemple 104.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 104",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c105",
+    "text": "Ça dépend de exemple 105.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 105",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c106",
+    "text": "Je me rends compte que exemple 106.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 106",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c107",
+    "text": "Est-ce que tu exemple 107.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 107",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c108",
+    "text": "Où est-ce que exemple 108.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 108",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c109",
+    "text": "Je n’ai plus de exemple 109.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 109",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c110",
+    "text": "Nous avons besoin de exemple 110.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 110",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c111",
+    "text": "Tu pourrais exemple 111.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 111",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c112",
+    "text": "Je voudrais exemple 112.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 112",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c113",
+    "text": "Il y a exemple 113.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 113",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c114",
+    "text": "Depuis deux ans exemple 114.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 114",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c115",
+    "text": "Pendant les vacances exemple 115.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 115",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c116",
+    "text": "Donne-le-moi exemple 116.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 116",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c117",
+    "text": "Ne me le donne pas exemple 117.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 117",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c118",
+    "text": "Je lui en parle exemple 118.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 118",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c119",
+    "text": "Tu y vas exemple 119.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 119",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c120",
+    "text": "On en revient exemple 120.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 120",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c121",
+    "text": "Il faut que je exemple 121.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 121",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c122",
+    "text": "Je viens de exemple 122.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 122",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c123",
+    "text": "Je suis en train de exemple 123.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 123",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c124",
+    "text": "J’en ai marre de exemple 124.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 124",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c125",
+    "text": "Ça dépend de exemple 125.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 125",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c126",
+    "text": "Je me rends compte que exemple 126.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 126",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c127",
+    "text": "Est-ce que tu exemple 127.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 127",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c128",
+    "text": "Où est-ce que exemple 128.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 128",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c129",
+    "text": "Je n’ai plus de exemple 129.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 129",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c130",
+    "text": "Nous avons besoin de exemple 130.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 130",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c131",
+    "text": "Tu pourrais exemple 131.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 131",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c132",
+    "text": "Je voudrais exemple 132.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 132",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c133",
+    "text": "Il y a exemple 133.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 133",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c134",
+    "text": "Depuis deux ans exemple 134.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 134",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c135",
+    "text": "Pendant les vacances exemple 135.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 135",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c136",
+    "text": "Donne-le-moi exemple 136.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 136",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c137",
+    "text": "Ne me le donne pas exemple 137.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 137",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c138",
+    "text": "Je lui en parle exemple 138.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 138",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c139",
+    "text": "Tu y vas exemple 139.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 139",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c140",
+    "text": "On en revient exemple 140.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 140",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c141",
+    "text": "Il faut que je exemple 141.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 141",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c142",
+    "text": "Je viens de exemple 142.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 142",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c143",
+    "text": "Je suis en train de exemple 143.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 143",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c144",
+    "text": "J’en ai marre de exemple 144.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 144",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c145",
+    "text": "Ça dépend de exemple 145.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 145",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c146",
+    "text": "Je me rends compte que exemple 146.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 146",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c147",
+    "text": "Est-ce que tu exemple 147.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 147",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c148",
+    "text": "Où est-ce que exemple 148.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 148",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c149",
+    "text": "Je n’ai plus de exemple 149.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 149",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c150",
+    "text": "Nous avons besoin de exemple 150.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 150",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c151",
+    "text": "Tu pourrais exemple 151.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 151",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c152",
+    "text": "Je voudrais exemple 152.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 152",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c153",
+    "text": "Il y a exemple 153.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 153",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c154",
+    "text": "Depuis deux ans exemple 154.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 154",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c155",
+    "text": "Pendant les vacances exemple 155.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 155",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c156",
+    "text": "Donne-le-moi exemple 156.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 156",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c157",
+    "text": "Ne me le donne pas exemple 157.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 157",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c158",
+    "text": "Je lui en parle exemple 158.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 158",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c159",
+    "text": "Tu y vas exemple 159.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 159",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c160",
+    "text": "On en revient exemple 160.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 160",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c161",
+    "text": "Il faut que je exemple 161.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 161",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c162",
+    "text": "Je viens de exemple 162.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 162",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c163",
+    "text": "Je suis en train de exemple 163.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 163",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c164",
+    "text": "J’en ai marre de exemple 164.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 164",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c165",
+    "text": "Ça dépend de exemple 165.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 165",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c166",
+    "text": "Je me rends compte que exemple 166.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 166",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c167",
+    "text": "Est-ce que tu exemple 167.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 167",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c168",
+    "text": "Où est-ce que exemple 168.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 168",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c169",
+    "text": "Je n’ai plus de exemple 169.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 169",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c170",
+    "text": "Nous avons besoin de exemple 170.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 170",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c171",
+    "text": "Tu pourrais exemple 171.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 171",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c172",
+    "text": "Je voudrais exemple 172.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 172",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c173",
+    "text": "Il y a exemple 173.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 173",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c174",
+    "text": "Depuis deux ans exemple 174.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 174",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c175",
+    "text": "Pendant les vacances exemple 175.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 175",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c176",
+    "text": "Donne-le-moi exemple 176.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 176",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c177",
+    "text": "Ne me le donne pas exemple 177.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 177",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c178",
+    "text": "Je lui en parle exemple 178.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 178",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c179",
+    "text": "Tu y vas exemple 179.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 179",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c180",
+    "text": "On en revient exemple 180.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 180",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c181",
+    "text": "Il faut que je exemple 181.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 181",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c182",
+    "text": "Je viens de exemple 182.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 182",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c183",
+    "text": "Je suis en train de exemple 183.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 183",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c184",
+    "text": "J’en ai marre de exemple 184.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 184",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c185",
+    "text": "Ça dépend de exemple 185.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 185",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c186",
+    "text": "Je me rends compte que exemple 186.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 186",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c187",
+    "text": "Est-ce que tu exemple 187.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 187",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c188",
+    "text": "Où est-ce que exemple 188.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 188",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c189",
+    "text": "Je n’ai plus de exemple 189.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 189",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c190",
+    "text": "Nous avons besoin de exemple 190.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 190",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c191",
+    "text": "Tu pourrais exemple 191.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 191",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c192",
+    "text": "Je voudrais exemple 192.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 192",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c193",
+    "text": "Il y a exemple 193.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 193",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c194",
+    "text": "Depuis deux ans exemple 194.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 194",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c195",
+    "text": "Pendant les vacances exemple 195.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 195",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c196",
+    "text": "Donne-le-moi exemple 196.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 196",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c197",
+    "text": "Ne me le donne pas exemple 197.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 197",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c198",
+    "text": "Je lui en parle exemple 198.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 198",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c199",
+    "text": "Tu y vas exemple 199.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 199",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c200",
+    "text": "On en revient exemple 200.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 200",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c201",
+    "text": "Il faut que je exemple 201.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 201",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c202",
+    "text": "Je viens de exemple 202.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 202",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c203",
+    "text": "Je suis en train de exemple 203.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 203",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c204",
+    "text": "J’en ai marre de exemple 204.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 204",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c205",
+    "text": "Ça dépend de exemple 205.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 205",
+    "triggerWords": [
+      "où"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c206",
+    "text": "Je me rends compte que exemple 206.",
+    "grammarTopics": [
+      "subjunctive"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 206",
+    "triggerWords": [
+      "hier"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c207",
+    "text": "Est-ce que tu exemple 207.",
+    "grammarTopics": [
+      "cest_ilest_demo"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 207",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c208",
+    "text": "Où est-ce que exemple 208.",
+    "grammarTopics": [
+      "comparisons"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 208",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c209",
+    "text": "Je n’ai plus de exemple 209.",
+    "grammarTopics": [
+      "relative_pronouns"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 209",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c210",
+    "text": "Nous avons besoin de exemple 210.",
+    "grammarTopics": [
+      "accent_traps"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 210",
+    "triggerWords": [
+      "de"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c211",
+    "text": "Tu pourrais exemple 211.",
+    "grammarTopics": [
+      "question_forms"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 211",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c212",
+    "text": "Je voudrais exemple 212.",
+    "grammarTopics": [
+      "passe_compose"
+    ],
+    "lessonIds": [
+      "L5"
+    ],
+    "translation": "Chunk translation 212",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c213",
+    "text": "Il y a exemple 213.",
+    "grammarTopics": [
+      "imparfait_vs_pc"
+    ],
+    "lessonIds": [
+      "L6"
+    ],
+    "translation": "Chunk translation 213",
+    "triggerWords": [
+      "là"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c214",
+    "text": "Depuis deux ans exemple 214.",
+    "grammarTopics": [
+      "futur_conditional"
+    ],
+    "lessonIds": [
+      "L7"
+    ],
+    "translation": "Chunk translation 214",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c215",
+    "text": "Pendant les vacances exemple 215.",
+    "grammarTopics": [
+      "passe_recent"
+    ],
+    "lessonIds": [
+      "L8"
+    ],
+    "translation": "Chunk translation 215",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c216",
+    "text": "Donne-le-moi exemple 216.",
+    "grammarTopics": [
+      "pronouns"
+    ],
+    "lessonIds": [
+      "ESS"
+    ],
+    "translation": "Chunk translation 216",
+    "triggerWords": [
+      "demain"
+    ],
+    "difficulty": "medium"
+  },
+  {
+    "id": "c217",
+    "text": "Ne me le donne pas exemple 217.",
+    "grammarTopics": [
+      "negation"
+    ],
+    "lessonIds": [
+      "L1"
+    ],
+    "translation": "Chunk translation 217",
+    "triggerWords": [
+      "à"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c218",
+    "text": "Je lui en parle exemple 218.",
+    "grammarTopics": [
+      "prepositions_time"
+    ],
+    "lessonIds": [
+      "L2"
+    ],
+    "translation": "Chunk translation 218",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  },
+  {
+    "id": "c219",
+    "text": "Tu y vas exemple 219.",
+    "grammarTopics": [
+      "articles"
+    ],
+    "lessonIds": [
+      "L3"
+    ],
+    "translation": "Chunk translation 219",
+    "triggerWords": [
+      "depuis"
+    ],
+    "difficulty": "hard"
+  },
+  {
+    "id": "c220",
+    "text": "On en revient exemple 220.",
+    "grammarTopics": [
+      "imperative"
+    ],
+    "lessonIds": [
+      "L4"
+    ],
+    "translation": "Chunk translation 220",
+    "triggerWords": [
+      "ne…jamais"
+    ],
+    "difficulty": "easy"
+  }
+]

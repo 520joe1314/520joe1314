@@ -1,0 +1,31 @@
+{
+  "sourceFiles": [
+    "README.txt"
+  ],
+  "grammarHits": {},
+  "topWords": [
+    [
+      "place",
+      1
+    ],
+    [
+      "provided",
+      1
+    ],
+    [
+      "guide",
+      1
+    ],
+    [
+      "files",
+      1
+    ],
+    [
+      "here",
+      1
+    ]
+  ],
+  "chunks": [
+    "Place provided guide files here"
+  ]
+}
