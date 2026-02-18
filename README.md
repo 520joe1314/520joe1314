@@ -1,16 +1,27 @@
-## Hi there 👋
+# Grand Concours L3 Offline (Single File)
 
-<!--
-**520joe1314/520joe1314** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+This project now provides a **single self-contained file**:
 
-Here are some ideas to get you started:
+- `index.html`
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+It contains all HTML, CSS, JavaScript, grammar data, vocabulary chunks, and question bank.
+
+## Run
+
+Just double-click `index.html` in any modern browser.
+No npm, no server, no build tools, no backend.
+
+## Included features
+
+- Quick Start mode
+- Grammar mode
+- Vocabulary mode
+- Mixed practice mode
+- Timed multiple-choice questions
+- Pronoun drills
+- Tense drills (passé composé, imparfait, futur proche, futur simple)
+- Subjunctive recognition
+- Article drills (du, de la, des, de after negation)
+- Question word drills
+- Accent confusion drills (où/ou, là/la/l’a, a/à)
+- Local score tracking with localStorage
