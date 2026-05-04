@@ -1,205 +1,98 @@
-import { loadState, saveState } from './storage.js';
-import { getDailyPlan, recordAttempt, sessionSummary, scoreSession } from './game.js';
+import React, { useMemo, useState } from 'https://esm.sh/react@18.3.1';
+import { createRoot } from 'https://esm.sh/react-dom@18.3.1/client';
+import { Search, Filter, ZoomIn, BookOpen, Calendar, Lightbulb, Landmark } from 'https://esm.sh/lucide-react@0.469.0';
 
-const app = document.getElementById('app');
-const state = loadState();
-let data = {};
-let currentMode = 'home';
-let currentSet = [];
-let cursor = 0;
-let startedAt = 0;
-let sessionAttempts = [];
-
-const modeCards = [
-  ['daily', 'Quick Start', '15–25 min auto session with weak-spot summary'],
-  ['grammar', 'Grammar Arcade', 'Trigger lists + chunk drills + mixed questions'],
-  ['vocab', 'Vocabulary Quest', 'Recognition and production-light chunk work'],
-  ['listening', 'Listening Lab', 'Listen twice (gist then detail) with TTS fallback'],
-  ['reading', 'Reading Runner', 'Contest-style passage and paraphrase matching'],
-  ['mock', 'Mock Exam Mode', 'Part A/B timed simulation with breakdown'],
-  ['boss', 'Boss Battles', 'High-yield mixed trap clusters'],
-  ['questionpack', 'Question Starter Words', 'Timed mnemonics + starter drill'],
-  ['lapack', 'là / la / l’a Pack', 'Accent logic + 30 quick questions'],
-  ['mistakes', 'Mistake Notebook', 'Filter, redo, mini test, CSV export'],
-  ['teacher', 'Teacher Mode', 'Hide answers, timer controls, topic selection'],
+const REGIONS = [
+  ["China","East Asia",[1,2,3,4,5,6,9],["bureaucracy","Confucianism","dynastic cycles"],"Long-lasting centralized empires shaped governance, trade, and intellectual life.",["Mandate of Heaven and legitimation","Song economic growth and innovation","Qing-era trade controls and foreign pressure"],[["960","Song Expansion","Commercialization and urban growth accelerate."],["1271","Yuan Rule","Mongol governance links China to Eurasian exchange."],["1368","Ming Restoration","Neo-Confucian statecraft and maritime outreach."],["1949","PRC Founded","Revolutionary state remakes social and economic order."]],["Scholar-official flowchart","Grand Canal arrows","Dynasty timeline cards"],{dbq:"Use state documents to analyze legitimacy and social order.",leq:"Trace continuity and change in governance from Song to Qing to modern era.",comparison:"Compare Chinese bureaucracy with Ottoman or European state models."},[73,38]],
+  ["Japan","East Asia",[1,3,4,5,6,9],["feudalism","isolation","industrialization"],"Japan blended imported ideas with local institutions, then industrialized rapidly.",["Shogunate authority and samurai hierarchy","Selective engagement with global trade","Meiji reforms and imperial expansion"],[["1185","Kamakura Shogunate","Military rule limits imperial political power."],["1603","Tokugawa Era","Internal peace and controlled foreign relations."],["1868","Meiji Restoration","Centralization and industrial modernization."],["1945","Postwar Shift","Constitutional democracy under U.S. occupation." ]],["Samurai-to-soldier contrast","Port opening map","Meiji reform checklist"],{dbq:"Assess how elites justified reform during external pressure.",leq:"Explain causes and effects of Meiji modernization.",comparison:"Compare Japanese and Russian industrialization paths."},[82,40]],
+  ["Korea","East Asia",[1,4,5,9],["tributary system","colonialism","division"],"Korea’s strategic location tied it to Chinese influence, Japanese imperialism, and Cold War conflict.",["Neo-Confucian governance in Joseon","Japanese annexation and resistance","Korean War and ideological division"],[["1392","Joseon Founded","Confucian state institutions formalized."],["1910","Japanese Annexation","Colonial extraction and cultural suppression."],["1950","Korean War","Global Cold War confrontation on peninsula."]],["Peninsula chokepoint diagram","Colonial policy cards","DMZ visual"],{dbq:"Analyze imperial policies and Korean responses.",leq:"Discuss long-term causes of Korea’s twentieth-century division.",comparison:"Compare Korean and Vietnamese Cold War conflicts."},[79,44]],
+  ["Dar al-Islam / Middle East","SW Asia",[1,2,3,4],["caliphates","trade networks","scholarship"],"Islamic civilization connected Afro-Eurasia through religion, commerce, and learning.",["House of Wisdom and knowledge transfer","Sharia and legal traditions","Indian Ocean and caravan trade integration"],[["750","Abbasid Era","Urban, scholarly, and commercial florescence."],["1258","Baghdad Falls","Political fragmentation reshapes region."],["1500s","Gunpowder Empires","Ottoman-Safavid rivalry defines geopolitics."]],["Trade-route overlay","Scholarly translation web","Mosque architecture motifs"],{dbq:"Evaluate role of religion in political legitimacy.",leq:"Explain spread of Islam and local adaptations.",comparison:"Compare Islamic and Christian institutional authority."},[58,42]],
+  ["Ottoman Empire / Turkey","SW Asia / SE Europe",[3,4,5,6],["gunpowder empire","millets","decline debate"],"A multiethnic empire bridged continents and managed diversity through flexible institutions.",["Devshirme and janissary systems","Millet governance of religious communities","Nineteenth-century reform and nationalism pressures"],[["1453","Constantinople Conquered","Ottomans dominate eastern Mediterranean."],["1520","Suleiman","Imperial legal and military high point."],["1918","Post-WWI Collapse","Empire partitioned after war defeat."]],["Millet pyramid","Siege map pins","Reform-before-collapse timeline"],{dbq:"Use reform decrees to assess state adaptation.",leq:"Analyze causes of Ottoman decline narratives.",comparison:"Compare Ottoman governance with Mughal model."},[61,46]],
+  ["Persia / Iran","SW Asia",[3,4,6,9],["Safavids","Shi'a identity","oil geopolitics"],"Persian states forged durable cultural identity and strategic regional influence.",["Safavid promotion of Twelver Shi'ism","Qajar encounters with imperialism","Twentieth-century revolution and political Islam"],[["1501","Safavid Rise","Shi'a state identity institutionalized."],["1906","Constitutional Revolution","Calls for limits on monarchy."],["1979","Iranian Revolution","Monarchy replaced with Islamic Republic." ]],["Sectarian map key","Oil concession graphic","Revolution slogan wall"],{dbq:"Interpret sources on religion and state power.",leq:"Explain continuities in Iranian political culture.",comparison:"Compare Iranian revolution with Russian or Chinese revolutions."},[66,50]],
+  ["South Asia / India","South Asia",[1,3,4,5,6,8,9],["caste","empire","nationalism"],"South Asia saw major religious, imperial, and anti-colonial transformations.",["Delhi Sultanate and Mughal synthesis","British Raj and colonial economy","Partition and postcolonial nation-building"],[["1526","Mughal Foundation","Turko-Mongol dynasty expands across India."],["1857","Sepoy Rebellion","Catalyst for direct British Crown rule."],["1947","Independence & Partition","India and Pakistan formed amid mass migration." ]],["Partition migration arrows","Caste and class matrix","Monsoon/agriculture tie-in"],{dbq:"Use colonial records to evaluate economic impacts.",leq:"Assess causes and effects of decolonization.",comparison:"Compare nationalist movements in India and Algeria."},[71,54]],
+  ["Southeast Asia","SE Asia",[1,2,4,5,6,9],["maritime trade","syncretism","colonialism"],"Mainland and island societies linked Indian Ocean and Pacific exchanges.",["Buddhist and Islamic cultural blending","European spice trade competition","Cold War conflicts in Indochina"],[["1200s","Regional Port Growth","Melaka-type entrepôts thrive."],["1800s","Colonial Expansion","French, Dutch, and British control intensifies."],["1975","Vietnam War End","Communist victory reshapes region." ]],["Strait chokepoint map","Religion spread arrows","War/decolonization sequence"],{dbq:"Assess foreign trade influence on state development.",leq:"Explain colonialism’s impact on Southeast Asian societies.",comparison:"Compare decolonization in Vietnam and Indonesia."},[79,58]],
+  ["Indonesia / Malay World","SE Asia",[2,4,5,6],["spice trade","Islamization","Dutch rule"],"Island networks made the Malay world central to global commerce.",["Srivijaya/Majapahit maritime precedent","Islam via merchants and local rulers","Dutch East Indies extraction economy"],[["1400s","Melaka Ascendant","Maritime Islam and trade flourish."],["1602","VOC Founded","Corporate imperialism drives monopoly."],["1945","Independence Declared","Anti-colonial struggle creates Indonesia." ]],["Spice-route dots","VOC ledger mockup","Archipelago identity map"],{dbq:"Analyze mercantile and imperial motivations.",leq:"Trace continuity and change in maritime trade systems.",comparison:"Compare Dutch and British colonial methods."},[82,62]],
+  ["Central Asia / Mongol Empire","Central Asia",[1,2,3],["nomadic empires","Silk Roads","transregional exchange"],"Steppe empires connected distant regions and accelerated exchange.",["Mongol military organization and mobility","Pax Mongolica and commercial security","Disease spread alongside trade routes"],[["1206","Temujin as Chinggis Khan","Unified steppe confederation launches expansion."],["1279","Yuan Completion","Mongol rule spans China and beyond."],["1368","Mongol Retreat","Regional successor states persist." ]],["Steppe mobility arrows","Caravan safety iconography","Plague diffusion map"],{dbq:"Evaluate Mongol impact on cultural exchange.",leq:"Discuss causes of Mongol expansion and limits.",comparison:"Compare Mongol and Roman imperial integration."},[64,60]],
+  ["Western Europe","Europe",[1,4,5,6,7,9],["feudalism","renaissance","industrialization"],"Europe transformed from fragmented feudal societies to global imperial powers.",["Renaissance/Reformation shifts in authority","Scientific Revolution and Enlightenment","Industrial capitalism and imperial expansion"],[["1347","Black Death","Demographic shock alters labor systems."],["1517","Reformation","Religious fragmentation reshapes politics."],["1760","Industrialization","Mechanized production accelerates growth." ]],["Before/after industrial skyline","Church-state split diagram","Imperial web map"],{dbq:"Use ideological texts to analyze political change.",leq:"Explain causes of European global dominance by 1900.",comparison:"Compare European and East Asian responses to industrialization."},[44,38]],
+  ["Britain","Europe",[5,6,7,8],["industrial revolution","empire","liberalism"],"Britain pioneered industrial capitalism and maritime empire.",["Coal, labor, and mechanization","Parliamentary reform and social tensions","Global naval supremacy and colonial administration"],[["1688","Glorious Revolution","Constitutional monarchy consolidates."],["1760s","Industrial Takeoff","Factory system and urbanization expand."],["1947","Imperial Retrenchment","Decolonization accelerates after WWII." ]],["Factory-to-empire flowchart","Steam/rail icon set","Colonial governance cards"],{dbq:"Interpret factory reports for labor conditions.",leq:"Analyze links between industry and empire.",comparison:"Compare British and French imperial strategies."},[38,32]],
+  ["France","Europe",[5,6,7,8],["revolution","nationalism","colonialism"],"France was a center of revolutionary politics and modern nationalism.",["French Revolution and rights discourse","Napoleonic expansion and legal codification","Third Republic colonial expansion"],[["1789","French Revolution","Old regime challenged by popular sovereignty."],["1804","Napoleon Crowned","Military empire spreads reforms and control."],["1954","Algerian War","Violent decolonization reshapes French politics." ]],["Rights declaration snippets","Revolution phases wheel","Colonial resistance panel"],{dbq:"Use political cartoons to assess revolutionary change.",leq:"Discuss causes and consequences of 1789 revolution.",comparison:"Compare French and Haitian revolutions."},[42,40]],
+  ["Spain and Portugal","Iberia / Atlantic",[4,5,6],["maritime empires","silver","Catholic missions"],"Iberian kingdoms launched early Atlantic empires and transoceanic exchange.",["Conquest and colonial administration","Silver flows to Europe and Asia","Mission systems and cultural blending"],[["1492","Atlantic Crossings","Transatlantic imperial era begins."],["1571","Manila Galleons","Pacific-Atlantic trade integration grows."],["1810s","Latin American Revolutions","Imperial control fractures." ]],["Silver route arrows","Mission settlement icons","Conquest/decolonization timeline"],{dbq:"Evaluate indigenous perspectives on conquest.",leq:"Explain global effects of silver extraction.",comparison:"Compare Iberian and British colonial economies."},[37,46]],
+  ["Germany and Italy","Central/Southern Europe",[6,7,9],["unification","fascism","world wars"],"Late nation-state unification reshaped European power politics.",["Nationalism and realpolitik unification","Industrial-military competition","Total war and authoritarian regimes"],[["1871","German Unification","Prussian leadership creates empire."],["1922","Mussolini Takes Power","Fascism emerges in Italy."],["1945","WWII Ends","Division, reconstruction, and European integration." ]],["Unification map sequence","Propaganda analysis board","Postwar split visuals"],{dbq:"Analyze nationalist rhetoric and mass politics.",leq:"Explain causes of world wars in Europe.",comparison:"Compare fascist regimes in Germany and Italy."},[51,37]],
+  ["Russia / Soviet Union","Eurasia",[3,5,7,9],["autocracy","revolution","Cold War"],"Russia moved from empire to socialist superpower with global ideological influence.",["Tsarist modernization and unrest","1917 revolutions and civil war","Soviet planning, WWII role, and Cold War rivalry"],[["1861","Serf Emancipation","Reform without full political liberalization."],["1917","Bolshevik Revolution","Leninist one-party state established."],["1991","USSR Dissolves","Post-Soviet transitions begin." ]],["Revolution cause web","Five-year-plan chart","Cold War bloc map"],{dbq:"Use revolutionary documents to assess ideology vs practice.",leq:"Trace causes and outcomes of 1917 revolutions.",comparison:"Compare Soviet and Chinese communist trajectories."},[59,33]],
+  ["West Africa","Africa",[1,4,6,8],["gold-salt trade","Islam","decolonization"],"West Africa connected Saharan trade, Atlantic systems, and modern anti-colonial politics.",["Mali/Songhai and trans-Saharan commerce","Atlantic slave trade disruptions","Twentieth-century independence movements"],[["1235","Mali Consolidates","Regional trade-state formation."],["1500s","Atlantic Slave Trade Expands","Human commodification transforms societies."],["1960","Wave of Independence","New states emerge from colonial rule." ]],["Trade + slave route contrast","Griot oral-history motif","Independence leader gallery"],{dbq:"Evaluate economic and social effects of slave trade.",leq:"Explain continuity/change in West African political systems.",comparison:"Compare colonial legacies in Ghana and Nigeria."},[42,55]],
+  ["East Africa / Swahili Coast","East Africa",[1,2,4,6],["Indian Ocean","city-states","diaspora"],"Swahili port cities linked African interior trade to Indian Ocean circuits.",["Bantu-Arab-Persian cultural synthesis","Portuguese and Omani competition","German/British colonial restructuring"],[["1000s","Swahili Urban Growth","City-states prosper through trade."],["1498","Portuguese Arrival","European naval intervention begins."],["1960s","Independence Era","Modern East African states form." ]],["Monsoon trade wheel","Swahili language roots card","Port-city node map"],{dbq:"Use merchant accounts to analyze cultural exchange.",leq:"Explain role of Indian Ocean trade in state formation.",comparison:"Compare Swahili cities with Southeast Asian ports."},[49,60]],
+  ["Egypt / North Africa","North Africa",[3,6,7,9],["Ottoman province","Suez","nationalism"],"Egypt’s strategic location made it vital to imperial routes and modern geopolitics.",["Ottoman and Mamluk legacies","Suez Canal and British intervention","Arab nationalism and postcolonial state-building"],[["1517","Ottoman Control","Egypt integrated into Ottoman system."],["1869","Suez Canal Opens","Global shipping and imperial stakes rise."],["1952","Free Officers Coup","Republican nationalism replaces monarchy." ]],["Canal chokepoint map","Cotton-export graph","Pan-Arabism concept cards"],{dbq:"Assess imperial motivations around Suez.",leq:"Discuss modernization attempts and foreign control.",comparison:"Compare Egyptian and Iranian nationalism."},[53,48]],
+  ["Ethiopia / Horn of Africa","Horn of Africa",[4,6,9],["Christian kingdom","resistance","Cold War"],"Ethiopia maintained sovereignty longer than most African states while navigating modern conflict.",["Aksumite and Solomonic legacies","Victory at Adwa against Italy","Famine, revolution, and regional wars in 20th century"],[["1896","Battle of Adwa","Ethiopian forces defeat Italian invasion."],["1935","Italian Occupation","Short-lived colonial rule under fascism."],["1974","Derg Revolution","Monarchy overthrown amid socialist realignment." ]],["Adwa battlefield markers","Highland trade routes","State/revolution timeline"],{dbq:"Analyze anti-colonial resistance narratives.",leq:"Explain causes and consequences of Ethiopian political change.",comparison:"Compare Ethiopia and Liberia in imperial era."},[56,57]],
+  ["Southern Africa","Southern Africa",[6,7,8,9],["minerals","settler colonialism","apartheid"],"Resource extraction and settler rule drove major political struggles.",["Diamond/gold mining and labor coercion","Boer-British conflict and union state","Apartheid and liberation movements"],[["1886","Gold Discoveries","Mining economy intensifies imperial rivalry."],["1948","Apartheid Begins","Institutionalized racial segregation."],["1994","Democratic Transition","Majority rule after anti-apartheid struggle." ]],["Mine-to-labor flowchart","Apartheid law timeline","Truth and reconciliation card"],{dbq:"Use legal documents to assess racial state policies.",leq:"Trace roots and end of apartheid.",comparison:"Compare South African and U.S. civil rights struggles."},[53,67]],
+  ["Mesoamerica","Americas",[1,4],["Aztec","urbanism","conquest"],"Complex city-states and empires flourished before Spanish conquest.",["Tribute systems and chinampa agriculture","Religious ritual and political authority","Conquest alliances and disease impact"],[["1325","Tenochtitlan Founded","Island capital becomes imperial center."],["1519","Cortés Arrives","Alliance warfare destabilizes Aztec rule."],["1521","Tenochtitlan Falls","Spanish colonial rule established." ]],["Causeways/chinampa sketch","Tribute glyph board","Conquest turning-point cards"],{dbq:"Interpret indigenous and Spanish conquest narratives.",leq:"Explain factors in Spanish victory.",comparison:"Compare Aztec and Inca imperial structures."},[22,52]],
+  ["Andes / Inca","South America",[1,4],["mit'a","roads","conquest"],"The Inca built a vast highland empire integrated by labor obligations and infrastructure.",["State labor (mit'a) and redistribution","Road networks and relay communication","Spanish capture of Atahualpa and colonial restructuring"],[["1438","Inca Expansion","Rapid imperial growth from Cusco."],["1532","Pizarro Captures Atahualpa","Leadership crisis aids conquest."],["1570s","Viceroyal Reorganization","Silver extraction and forced labor intensify." ]],["Andean terrace visuals","Road relay icons","Labor obligation matrix"],{dbq:"Analyze labor systems before and after conquest.",leq:"Discuss environmental adaptation in Andean societies.",comparison:"Compare Inca and Aztec integration strategies."},[27,62]],
+  ["North America / United States","North America",[5,6,7,8,9],["revolution","industrial capitalism","superpower"],"The U.S. emerged from settler colonies to global economic and military influence.",["Atlantic revolutions and republicanism","Civil War and industrial expansion","Twentieth-century world wars and Cold War leadership"],[["1776","Independence Declared","Colonial rebellion forms new republic."],["1861","Civil War Begins","Union, slavery, and federal power contested."],["1945","Postwar Ascendancy","U.S. becomes leading superpower." ]],["Industrial growth chart","Manifest destiny map","Cold War containment web"],{dbq:"Use constitutional and reform sources for change over time.",leq:"Explain causes of U.S. rise by 1945.",comparison:"Compare U.S. and Latin American independence outcomes."},[16,39]],
+  ["Latin America / Caribbean","Americas",[4,5,6,8,9],["plantations","revolutions","dependency"],"Colonial extraction and racial hierarchy shaped revolutionary and modern politics.",["Casta systems and coerced labor","Haitian and Spanish American revolutions","Neo-colonial economics and U.S. influence"],[["1791","Haitian Revolution Starts","Slave uprising challenges Atlantic order."],["1810","Spanish American Revolutions","Creole-led independence movements spread."],["1959","Cuban Revolution","Cold War tensions intensify in hemisphere." ]],["Casta ladder graphic","Sugar plantation economy cards","Revolution diffusion map"],{dbq:"Assess social hierarchy using colonial records.",leq:"Explain why post-independence inequality persisted.",comparison:"Compare Haitian and French revolutionary outcomes."},[24,47]],
+  ["Oceania / Pacific","Pacific",[4,6,9],["migration","imperialism","war"],"Pacific societies navigated migration networks, colonial takeover, and strategic warfare.",["Austronesian navigation traditions","Nineteenth-century imperial partition","WWII Pacific theater and decolonization"],[["1760s","European Exploration Intensifies","Cartography and claims expand."],["1880s","Imperial Annexations","Colonial borders harden across islands."],["1942","Pacific War Turning Points","Island campaigns reshape global conflict." ]],["Voyaging canoe routes","Island chain strategy map","Decolonization milestones"],{dbq:"Use maps to evaluate strategic geography.",leq:"Discuss imperialism’s impact on island societies.",comparison:"Compare Pacific and Caribbean colonial experiences."},[90,74]],
 ];
 
-init();
+const units = Array.from({ length: 9 }, (_, i) => i + 1);
 
-async function init() {
-  const [grammarTopics, vocabEntries, chunks, questionBank] = await Promise.all([
-    fetchJSON('data/grammar_topics.json'),
-    fetchJSON('data/vocab_entries.json'),
-    fetchJSON('data/chunk_entries.json'),
-    fetchJSON('data/question_bank.json'),
-  ]);
-  data = { grammarTopics, vocabEntries, chunks, questionBank };
-  renderHome();
-}
+function App() {
+  const [query, setQuery] = useState('');
+  const [unit, setUnit] = useState('all');
+  const [zoom, setZoom] = useState(1);
+  const [selected, setSelected] = useState(REGIONS[0]);
 
-async function fetchJSON(path) { const r = await fetch(path); return r.json(); }
+  const filtered = useMemo(() => REGIONS.filter((r) => {
+    const q = query.trim().toLowerCase();
+    const hit = !q || [r[0], r[1], ...r[3]].join(' ').toLowerCase().includes(q);
+    const unitHit = unit === 'all' || r[2].includes(Number(unit));
+    return hit && unitHit;
+  }), [query, unit]);
 
-function renderHome() {
-  currentMode = 'home';
-  app.innerHTML = `
-    <header><h1>🎮 Grand Concours L3 Arena</h1><p>French 3 (D’accord! 3 Leçons 1–8) · Speed + Accuracy + Context</p></header>
-    <section class="stats">
-      <div><strong>${data.questionBank.length}</strong><span>Questions</span></div>
-      <div><strong>${data.vocabEntries.length}</strong><span>Vocab Forms</span></div>
-      <div><strong>${data.chunks.length}</strong><span>Chunks</span></div>
-      <div><strong>${state.mistakes.length}</strong><span>Mistakes Logged</span></div>
-    </section>
-    <section class="grid">
-      ${modeCards.map(([id, name, desc]) => `<button class="card" data-mode="${id}"><h3>${name}</h3><p>${desc}</p></button>`).join('')}
-    </section>
-  `;
-  app.querySelectorAll('[data-mode]').forEach((b) => b.onclick = () => launchMode(b.dataset.mode));
-}
+  return <div className="min-h-screen bg-slate-950 text-slate-100 p-4 md:p-6">
+    <div className="max-w-7xl mx-auto space-y-4">
+      <header className="rounded-2xl border border-slate-800 bg-slate-900/80 p-5">
+        <h1 className="text-2xl md:text-3xl font-bold">AP World History Interactive Review Map</h1>
+        <p className="text-slate-400 text-sm mt-1">Units 1-9 · Regions, timelines, and FRQ-ready context.</p>
+      </header>
 
-function launchMode(mode) {
-  currentMode = mode;
-  if (mode === 'mistakes') return renderMistakes();
-  if (mode === 'teacher') return renderTeacher();
+      <div className="grid lg:grid-cols-[1.4fr,1fr] gap-4">
+        <section className="space-y-4">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-4 grid md:grid-cols-3 gap-3">
+            <div className="md:col-span-2 relative"><Search className="w-4 h-4 absolute left-3 top-3 text-slate-500" /><input value={query} onChange={(e)=>setQuery(e.target.value)} placeholder="Search region, area, tags..." className="w-full bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-3 py-2"/></div>
+            <label className="relative"><Filter className="w-4 h-4 absolute left-3 top-3 text-slate-500"/><select value={unit} onChange={(e)=>setUnit(e.target.value)} className="w-full appearance-none bg-slate-950 border border-slate-700 rounded-xl pl-9 pr-3 py-2"><option value="all">All Units</option>{units.map(u=><option key={u} value={u}>Unit {u}</option>)}</select></label>
+            <div className="md:col-span-3"><div className="flex justify-between text-xs text-slate-400 mb-1"><span className="inline-flex gap-1 items-center"><ZoomIn className="w-3 h-3"/>Map Zoom</span><span>{zoom.toFixed(1)}x</span></div><input type="range" min="0.7" max="1.8" step="0.1" value={zoom} onChange={(e)=>setZoom(Number(e.target.value))} className="w-full"/></div>
+          </div>
 
-  if (mode === 'daily') currentSet = getDailyPlan(data.questionBank, state);
-  if (mode === 'grammar') currentSet = data.questionBank.filter(q => q.mode === 'grammar_arcade').slice(0, 35);
-  if (mode === 'vocab') currentSet = data.questionBank.filter(q => ['vocab_quest','daily'].includes(q.mode)).slice(0, 35);
-  if (mode === 'listening') currentSet = data.questionBank.filter(q => q.type === 'listening_mcq').slice(0, 24);
-  if (mode === 'reading') currentSet = data.questionBank.filter(q => q.type === 'reading_mcq').slice(0, 24);
-  if (mode === 'mock') currentSet = data.questionBank.slice(0, 30);
-  if (mode === 'boss') currentSet = data.questionBank.filter(q => q.trapType).slice(0, 30);
-  if (mode === 'questionpack') currentSet = data.questionBank.filter(q => q.type === 'question_word').slice(0, 30);
-  if (mode === 'lapack') currentSet = data.questionBank.filter(q => q.trapType === 'accent-trap').slice(0, 30);
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-3 overflow-hidden">
+            <svg viewBox="0 0 100 50" className="w-full h-[360px] bg-slate-950 rounded-xl" style={{ transform: `scale(${zoom})`, transformOrigin: 'center' }}>
+              {[[6,8,24,12],[18,24,14,15],[34,10,20,12],[50,8,18,12],[46,22,22,12],[65,18,12,10],[78,10,16,26]].map((r,i)=><rect key={i} x={r[0]} y={r[1]} width={r[2]} height={r[3]} rx="2" fill="#0f172a" stroke="#334155"/>) }
+              {filtered.map((r)=><g key={r[0]} className="cursor-pointer" onClick={()=>setSelected(r)}><circle cx={r[9][0]} cy={r[9][1]} r="1.3" fill={selected[0]===r[0]?"#22d3ee":"#f59e0b"}/><text x={r[9][0]+1.6} y={r[9][1]-1} fontSize="1.8" fill="#cbd5e1">{r[0]}</text></g>)}
+            </svg>
+          </div>
 
-  cursor = 0;
-  sessionAttempts = [];
-  renderQuestion();
-}
+          <div className="rounded-2xl border border-slate-800 bg-slate-900 p-4">
+            <h3 className="font-semibold mb-2">Unit Cheat Layer</h3>
+            <div className="flex flex-wrap gap-2">{units.map(u=><button key={u} onClick={()=>setUnit(String(u))} className="px-3 py-1 rounded-full border border-slate-700 text-sm hover:border-cyan-400">Unit {u}</button>)}</div>
+            <h4 className="font-semibold mt-4 mb-2">Region Quick List ({filtered.length})</h4>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 text-sm">{filtered.map(r=><button key={r[0]} onClick={()=>setSelected(r)} className="text-left px-2 py-1 rounded border border-slate-800 hover:border-cyan-500">{r[0]}</button>)}</div>
+          </div>
+        </section>
 
-function renderQuestion() {
-  const q = currentSet[cursor];
-  if (!q) return renderSummary();
-  startedAt = performance.now();
-  const hint = state.userProfile.minimalHints ? '' : `<small>${q.explanation}</small>`;
-  app.innerHTML = `
-  <header><button id="homeBtn">← Home</button><h2>${modeTitle(currentMode)}</h2><p>Q ${cursor+1}/${currentSet.length}</p></header>
-  <article class="question">
-    <p class="tagline">${q.grammarTopics.join(', ')} · ${q.lessonId} · ${q.difficulty}</p>
-    <p class="prompt">${q.prompt}</p>
-    <p class="sentence">${q.sentence}</p>
-    ${hint}
-    <div class="options">
-      ${q.options.map((opt, i) => `<button data-i="${i}">${opt}</button>`).join('')}
+        <aside className="rounded-2xl border border-slate-800 bg-slate-900 p-4 space-y-3">
+          <h2 className="text-xl font-bold">{selected[0]}</h2><p className="text-slate-400">{selected[1]}</p>
+          <p className="text-sm">{selected[4]}</p>
+          <div className="text-sm"><span className="font-semibold">AP Units:</span> {selected[2].join(', ')}</div>
+          <div className="flex flex-wrap gap-2">{selected[3].map(t=><span key={t} className="px-2 py-0.5 bg-slate-800 rounded-full text-xs">#{t}</span>)}</div>
+          <Info title="Key AP Ideas" icon={<BookOpen className="w-4 h-4"/>} items={selected[5]} />
+          <Info title="Timeline" icon={<Calendar className="w-4 h-4"/>} items={selected[6].map(t=>`${t[0]} — ${t[1]}: ${t[2]}`)} />
+          <Info title="Visual Ideas" icon={<Lightbulb className="w-4 h-4"/>} items={selected[7]} />
+          <div className="rounded-xl border border-slate-800 p-3 text-sm space-y-2"><div className="flex items-center gap-2 font-semibold"><Landmark className="w-4 h-4"/>FRQ Exam Use</div><p><b>DBQ:</b> {selected[8].dbq}</p><p><b>LEQ:</b> {selected[8].leq}</p><p><b>Comparison:</b> {selected[8].comparison}</p></div>
+        </aside>
+      </div>
     </div>
-    <div class="actions">
-      <button id="listenBtn">🔊 Listen twice</button>
-      <button id="ruleBtn">Show me the rule</button>
-    </div>
-    <p id="feedback"></p>
-  </article>`;
-
-  app.querySelector('#homeBtn').onclick = renderHome;
-  app.querySelectorAll('[data-i]').forEach((b) => b.onclick = () => submitAnswer(Number(b.dataset.i)));
-  app.querySelector('#listenBtn').onclick = () => speakTwice(q.audioText || q.sentence);
-  app.querySelector('#ruleBtn').onclick = () => alert(shortRule(q.grammarTopics[0]));
+  </div>;
 }
 
-function submitAnswer(index) {
-  const q = currentSet[cursor];
-  const elapsed = Math.round(performance.now() - startedAt);
-  const correct = recordAttempt(state, q, index, elapsed);
-  sessionAttempts.push({ questionId: q.id, correct, elapsedMs: elapsed, topic: q.grammarTopics[0] });
-  saveState(state);
-
-  const feedback = app.querySelector('#feedback');
-  feedback.textContent = correct ? `✅ Correct (${elapsed}ms)` : `❌ ${q.correctAnswer} — ${q.explanation}`;
-  setTimeout(() => { cursor += 1; renderQuestion(); }, 350);
+function Info({ title, items, icon }) {
+  return <div className="rounded-xl border border-slate-800 p-3"><div className="font-semibold text-sm mb-1 flex items-center gap-2">{icon}{title}</div><ul className="list-disc ml-5 text-sm space-y-1">{items.map(i=><li key={i}>{i}</li>)}</ul></div>;
 }
 
-function renderSummary() {
-  const summary = sessionSummary(sessionAttempts, data.questionBank, state.mistakes);
-  const score = scoreSession(sessionAttempts);
-  app.innerHTML = `
-    <header><button id="homeBtn">← Home</button><h2>Session Complete</h2></header>
-    <section class="summary">
-      <p><strong>Score:</strong> ${score}</p>
-      <p><strong>Accuracy:</strong> ${Math.round(100 * sessionAttempts.filter(a => a.correct).length / Math.max(1, sessionAttempts.length))}%</p>
-      <p><strong>Top 3 weak spots:</strong> ${summary.weak.join(', ') || 'None yet'}</p>
-      <p><strong>Top missed words:</strong> ${summary.missedWords.join(', ') || 'None yet'}</p>
-      <p><strong>Recommended next set:</strong> ${summary.weak[0] ? `Boss Battle: ${summary.weak[0]}` : 'Daily Session refresh'}</p>
-    </section>
-  `;
-  app.querySelector('#homeBtn').onclick = renderHome;
-}
-
-function renderMistakes() {
-  const rows = state.mistakes.slice(-200).reverse();
-  app.innerHTML = `
-    <header><button id="homeBtn">← Home</button><h2>Mistake Notebook</h2></header>
-    <div class="actions"><button id="redoBtn">Redo only mistakes</button><button id="miniBtn">Mini-test from mistakes</button><button id="csvBtn">Export CSV</button></div>
-    <div class="mistakes">${rows.map(m => `<details><summary>${m.question_id} · ${m.grammar_topic_tags.join(', ')}</summary><p><b>Trigger:</b> ${m.trigger_words.join(', ')}</p><p><b>Your answer:</b> ${m.user_answer}</p><p><b>Correct:</b> ${m.correct_answer}</p><p><b>Model:</b> ${m.corrected_model_sentence}</p><p>${m.why}</p></details>`).join('')}</div>`;
-  app.querySelector('#homeBtn').onclick = renderHome;
-  app.querySelector('#redoBtn').onclick = () => { currentSet = state.mistakes.map(m => data.questionBank.find(q => q.id === m.question_id)).filter(Boolean).slice(0,30); cursor=0; sessionAttempts=[]; renderQuestion(); };
-  app.querySelector('#miniBtn').onclick = () => { currentSet = state.mistakes.slice(-20).map(m => data.questionBank.find(q => q.id === m.question_id)).filter(Boolean); cursor=0; sessionAttempts=[]; renderQuestion(); };
-  app.querySelector('#csvBtn').onclick = exportMistakesCSV;
-}
-
-function renderTeacher() {
-  app.innerHTML = `
-    <header><button id="homeBtn">← Home</button><h2>Teacher Mode</h2></header>
-    <label><input id="hideAns" type="checkbox" ${state.teacherMode.hideAnswersUntilEnd ? 'checked' : ''}/> Hide answers until end</label>
-    <label>Timer multiplier <input id="tm" type="number" step="0.1" min="0.5" max="3" value="${state.teacherMode.timerMultiplier}"/></label>
-    <p>Select lessons for targeted sets:</p>
-    <div>${['L1','L2','L3','L4','L5','L6','L7','L8','ESS'].map(l => `<label><input class="lessonChk" type="checkbox" value="${l}" ${state.teacherMode.selectedLessons.includes(l)?'checked':''}/> ${l}</label>`).join(' ')}</div>
-    <button id="saveTeacher">Save</button>
-  `;
-  app.querySelector('#homeBtn').onclick = renderHome;
-  app.querySelector('#saveTeacher').onclick = () => {
-    state.teacherMode.hideAnswersUntilEnd = app.querySelector('#hideAns').checked;
-    state.teacherMode.timerMultiplier = Number(app.querySelector('#tm').value) || 1;
-    state.teacherMode.selectedLessons = Array.from(app.querySelectorAll('.lessonChk:checked')).map(i => i.value);
-    saveState(state);
-    renderHome();
-  };
-}
-
-function speakTwice(text) {
-  if (!('speechSynthesis' in window)) return alert('TTS unavailable in this browser.');
-  const u = new SpeechSynthesisUtterance(text); u.lang = 'fr-FR';
-  speechSynthesis.speak(u);
-  setTimeout(() => speechSynthesis.speak(new SpeechSynthesisUtterance(text)), 1200);
-}
-
-function shortRule(topic) {
-  const map = {
-    question_forms: 'Use est-ce que for neutral questions; inversion is formal; intonation in spoken French.',
-    passe_compose: 'Passé composé = completed action. Use être with movement/reflexive and agree if needed.',
-    imparfait_vs_pc: 'Imparfait sets background/habit; passé composé is a finished event.',
-    pronouns: 'Pronoun order before verb: me/te/se/nous/vous -> le/la/les -> lui/leur -> y -> en.',
-    accent_traps: 'où = where, ou = or; là = there; la = the; l’a = has it; a = has, à = to/at.',
-  };
-  return map[topic] || 'Find the trigger word, then match tense/pronoun/article pattern.';
-}
-
-function modeTitle(mode) { return modeCards.find(([id]) => id === mode)?.[1] || 'Practice'; }
-
-function exportMistakesCSV() {
-  const header = ['question_id','user_answer','correct_answer','grammar_topic_tags','vocab_words','trigger_words','corrected_model_sentence','why'];
-  const lines = [header.join(',')];
-  state.mistakes.forEach((m) => lines.push([
-    m.question_id,
-    esc(m.user_answer), esc(m.correct_answer),
-    esc(m.grammar_topic_tags.join('|')),
-    esc(m.vocab_words.join('|')),
-    esc(m.trigger_words.join('|')),
-    esc(m.corrected_model_sentence),
-    esc(m.why)
-  ].join(',')));
-  const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'mistake_notebook.csv';
-  a.click();
-}
-
-function esc(v='') { return `"${String(v).replaceAll('"','""')}"`; }
+createRoot(document.getElementById('app')).render(<App />);
